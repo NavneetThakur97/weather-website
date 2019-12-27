@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>Home</title>
+        <link rel='icon' href='/img/icon.png'>
+        <link rel='stylesheet' href='/css/styles.css'>
+        
+    </head>
+    <body>
+        {{! stickey footer achieved using 'flex box' which will make the 
+        below division to take all the space except the space taken by footer
+        So the footer is pushed to bottom of page, flex box is provided by css}}
+        <div class='main-content'>
+             {{>header}}
+             <p>Use this site to get your weather</p>
+             <form>
+                 <input placeholder="Location">
+                 <Button>Search</Button>
+             </form>
+
+             <p id='message-1'>
+
+             </p>
+
+             <p id='message-2'>
+
+             </p>
+        </div>
+       
+        {{>footer}}
+
+
+        <script src='/js/app.js'></script>
+        {{! we need to write this
+        script tag at the end because if we put it in header then the script is rendered but the 
+        form is not even created yet and we are using form in script
+        So, we need to first have form then use that it script thats why it should be at the end of body}}
+    </body>
+</html>

@@ -1,0 +1,70 @@
+body{
+    color: #333333;
+    font-family: arial;
+    max-width: 650px;
+    margin: 0 auto;
+    /* first value '0' is margin value for top and 
+    bottom and second value is margin value for left and right*/
+    padding: 0 16px; /* values same as margin*/
+    
+
+    /* enable flex box*/
+    display:flex;
+    flex-direction: column;/* bring footer to bottom*/
+    min-height: 100vh;/* vh: viewport height, view port is the box where 
+                              content is shown*/
+}
+
+/* footer {
+    background: blue;
+    padding: 16px;     add space bw background color box edge 
+                       and the text on all sided
+    margin: 16px;      add space bw background color box and the text line outside the box
+}
+ */
+
+ footer {
+     color: #888888;
+     border-top: 1px solid #eeeeee; /* width, type, color*/
+    margin-top: 16px;
+    padding: 16px 0;
+    }
+
+    header {
+        margin-top:16px;
+        margin-bottom:48px;
+    }
+
+    h1{
+        font-size: 64px;
+        margin-bottom: 16px;
+    }
+
+    /* below it is targetting links present only inside header*/
+    header a {
+        color:#888888;
+        margin-right:16px;
+        text-decoration: none;
+    }
+
+ /*   class is by '.' operator  as ".class_name" */
+ .portrait {
+    width: 250px;
+ }
+ .main-content {
+     flex-grow: 1; /* this allow a given element to grow as much as it needs,
+                      its value =1 tells flex box that the main content should take all the left space*/
+ }
+
+input{
+    border: 1px solid #cccccc;
+    padding: 8px;
+}
+
+button{
+    cursor: pointer;
+    border: 1px solid #888888;
+    background:#888888;
+    color: white;
+    padding: 8px;
+}

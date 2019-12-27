@@ -1,0 +1,76 @@
+console.log('client side java script file is loaded')
+
+// we will be using fetch API to make the user to make request from browser
+
+
+// fetch('http://puzzle.mead.io/puzzle').then((response)=>{
+//         response.json().then( (data) => {
+//                 console.log(data)
+//         })
+//     })
+
+
+// fetch() takes URL as its parameter
+
+
+// fetch('http://localhost:3000/weather?address=solan').then((response)=>{
+//                 response.json().then( (data) => {
+//                     if(data.error){
+//                         console.log(data.error)
+//                     }
+//                 else{
+//                     console.log(data)
+//                 }
+//         })
+//     })
+
+
+
+
+//slelect element of HTML document that we want to work with
+//In this case it is the 'form' for the search query in index.hbs
+//we do it as follow
+const weatherform=document.querySelector('form')// this return js implementation of that html element
+                                                // that is sent as parameter
+
+
+const search= document.querySelector('input')// bring searched text that we searched in form
+                                             // when clicked search button
+
+const messageOne=document.querySelector('#message-1')//match paragraph with id=message-1
+//messageOne.textContent='from javascript'
+
+
+const messageTwo=document.querySelector('#message-2')
+
+
+
+// Now we need event listner to listen event on this html element
+weatherform.addEventListener('submit', (event)=>{
+    // first argument is the string, name of the event we want to listen
+    // second is call back function
+    event.preventDefault()// stop the browser to get refreshed because of 
+    //which we could see our output just for a second then output vanished
+    
+    const location =search.value
+    
+    const url='http://localhost:3000/weather?address='+location
+
+    messageOne.textContent='loading...'
+    messageTwo.textContent=''
+    fetch(url).then((response)=>{
+                response.json().then( (data) => {
+                    if(data.error){
+                        messageOne.textContent=data.error
+                        //console.log(data.error)
+                    }
+                else{
+                    messageOne.textContent=data.location
+                    messageTwo.textContent='summary: '+data.forecastdata.summary+', temperature: '+data.forecastdata.temperature+', precipProbability: '+data.forecastdata.precipProbability
+                    //console.log(data)
+                }
+        })
+    })
+    
+    //console.log(location)
+})
