@@ -32,7 +32,7 @@ app.use(express.static(publicDirectoryPath))// use() function is a way to custom
 app.get('',(req,res)=>{
     res.render('index',{
         title:'Weather',
-        name: 'Naneet and My pichkuuu'
+        name: 'Naneet'
     })
 })
 
