@@ -7,7 +7,7 @@ const forecast=require('./utils/forecast.js')
 
 
 const app = express()
-
+const port= process.env.PORT || 3000// heroku will generate port with this 
 
 // SECTION 1:
 //Define path to Express config
@@ -115,7 +115,8 @@ app.get("*",(req,res)=>{
     })
 })
 
-
-app.listen(3000, ()=>{
-    console.log('server started at port 3000')
+// we need to change the port i.e 3000, in order to work with 
+/// heroku as herku will give the port number
+app.listen(port, ()=>{
+    console.log('server started at port '+port)
 })
