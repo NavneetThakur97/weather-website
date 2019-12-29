@@ -22,7 +22,7 @@ weatherform.addEventListener('submit', (event)=>{
                     }
                 else{
                     messageOne.textContent=data.location
-                    messageTwo.textContent='summary: '+data.forecastdata.summary+', temperature: '+data.forecastdata.temperature+', precipProbability: '+data.forecastdata.precipProbability
+                    messageTwo.textContent='summary: '+data.forecastdata.summary+', temperature: '+data.forecastdata.temperature+', precipProbability: '+data.forecastdata.precipProbability+', tempHigh: '+data.forecastdata.tempHigh+', tempLow: '+data.forecastdata.tempLow
                     
                 }
         })
